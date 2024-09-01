@@ -21,7 +21,7 @@ const SIGNING_WINDOW: u32 = 5000;
 pub struct BpxClient {
     pub verifier: VerifyingKey,
     signer: SigningKey,
-    base_url: String,
+    pub base_url: String,
     pub client: reqwest::Client,
 }
 

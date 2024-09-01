@@ -64,10 +64,11 @@ pub struct Token {
     pub blockchain: Blockchain,
     pub deposit_enabled: bool,
     pub minimum_deposit: Decimal,
-    pub withdrawal_enabled: bool,
+    pub withdraw_enabled: bool,
     pub minimum_withdrawal: Decimal,
     pub maximum_withdrawal: Option<Decimal>,
     pub withdrawal_fee: Decimal,
+    pub contract_address: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -90,3 +91,13 @@ pub struct Kline {
     pub volume: Decimal,
     pub trades: u64,
 }
+
+
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Asset {
+    pub symbol: String,
+    pub tokens: Vec<Token>
+}
+
